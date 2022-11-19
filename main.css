@@ -71,6 +71,10 @@ body{
   position: relative;
 }
 
+#login:hover {
+  background-color: rgb(28, 25, 228);
+}
+
 #signup{
   margin: 10px;
   width: 250px;
@@ -84,4 +88,8 @@ body{
   text-transform: capitalize;
   position: relative;
 } 
+
+#signup:hover {
+  background-color: rgb(28, 25, 228);
+}
   

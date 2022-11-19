@@ -94,8 +94,12 @@ body{
     color: white;
     font-size: 1.2rem;
     border: none;
-
 }
+
+#Button:hover {
+    background-color: rgb(28, 25, 228);
+}
+
 
 #OR{
     margin:20px;
@@ -103,9 +107,9 @@ body{
 
 #Google_Login{
     align-self:center;
-    text-align: center;
+    text-align:center;
     width: 100%;
-    height: 40px;
+    height: 42px;
     background:rgba(224, 225, 230, 0.892);
     border-radius: 5px;
     color: rgb(18, 17, 17);
@@ -113,10 +117,19 @@ body{
     border-width: 1px;   
 }
 
-#gimg{
-    background-image: url(Google.png);
-    background-size: 1px;
-    background-repeat: no-repeat;
+#Google_Login:hover {
+    background-color: rgba(83, 91, 92, 0.749);
+}
+
+#googleicon{
+    float:left;
+    margin-left:150px;
+}
+
+#googletext{
+    float:left;
+    margin-top: 1.5px;
+    margin-left:20px
 }
 
 #emailentry{
