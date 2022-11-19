@@ -110,24 +110,32 @@ body{
     border-radius: 5px;
     color: rgb(18, 17, 17);
     font-size: 1.2rem;
-    border-width: 1px;
+    border-width: 1px;   
+}
+
+#gimg{
+    background-image: url(Google.png);
+    background-size: 1px;
+    background-repeat: no-repeat;
 }
 
 #emailentry{
     background-color: antiquewhite;
     border-radius: 10px;
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
     margin-top:10px;
     height: 40px;
     width: 500px;
+    padding-left:12px;
 }
 
 #passwordentry{
     background-color: antiquewhite;
     border-radius: 10px;
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
     margin-top:10px;
     height: 40px;
     width: 500px;
+    padding-left:12px;
 }
 
