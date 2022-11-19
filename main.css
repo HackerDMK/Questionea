@@ -72,7 +72,7 @@ body{
 }
 
 #login:hover {
-  background-color: rgb(28, 25, 228);
+  background-color: rgb(153, 153, 255);
 }
 
 #signup{
@@ -90,6 +90,6 @@ body{
 } 
 
 #signup:hover {
-  background-color: rgb(28, 25, 228);
+  background-color: rgb(153, 153, 255);
 }
   
