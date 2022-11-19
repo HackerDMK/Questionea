@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --stdMargin:5rem;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #75CDFF 7%, #FFFFFF 32%);
+  justify-content: center;
+  
+}
+
+#LandingPage{
+  margin:1rem;
+  display:grid;
+}
+
+#HeroSection{
+  background-position-y: top;
+  margin:auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#ImageSection{
+  background: transparent;
+  align-self: center;
+  background-position: bottom;
+}
+
+#title{
+  align-self: center;
+  font-family:'Space Grotesk';
+  font-weight: 700;
+  font-size: 4rem;
+  text-transform: capitalize; 
+}
+
+#subtitle{
+  align-self: center;
+  font-family: 'Roboto';
+  font-weight:400;
+  font-size: 2rem;
+  color:gray;
+}
+
+#buttons{
+  margin:0rem;
+  align-self: center;
+}
+
+#login{
+  margin: 10px;
+  width: 250px;
+  padding:12px 30px;
+  background:rgb(34, 71, 255);
+  border-radius: 30px;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+#signup{
+  margin: 10px;
+  width: 250px;
+  padding:12px 30px;
+  background:rgb(34, 71, 255);
+  border-radius: 30px;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  position: relative;
+} 
+  
