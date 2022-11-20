@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
 
 *{
   margin:0;
@@ -22,7 +21,6 @@ body{
 
 #title{
     align-self: center;
-    font-family:'Space Grotesk';
     font-weight: 700;
     font-size: 1.5rem;
     text-transform: capitalize; 
@@ -31,7 +29,6 @@ body{
 #subtitle{
     margin-top: 10px;
     align-self: center;
-    font-family: 'Roboto';
     font-weight:400;
     font-size: 1rem;
     color:gray;
@@ -55,7 +52,6 @@ body{
 #Heading{
     margin-bottom: 10px;
     align-self: center;
-    font-family:'Space Grotesk';
     font-weight: 700;
     font-size: 3rem;
     text-transform: capitalize; 
@@ -64,7 +60,6 @@ body{
 #Email{
     margin-top:40px;
     align-self: center;
-    font-family: 'Roboto';
     font-weight:400;
     font-size: 1.5rem;
     color:gray;
@@ -73,7 +68,6 @@ body{
 #Password{
     margin-top:25px;
     align-self: center;
-    font-family: 'Roboto';
     font-weight:400;
     font-size: 1.5rem;
     color:gray;
@@ -84,7 +78,7 @@ body{
     text-align: center;;
 }
 
-#Button{
+.Button{
     align-self:center;
     margin-top:30px;
     width: 100%;
@@ -96,7 +90,7 @@ body{
     border: none;
 }
 
-#Button:hover {
+.Button:hover {
     background-color: rgb(28, 25, 228);
 }
 
@@ -132,7 +126,7 @@ body{
     margin-left:20px
 }
 
-#emailentry{
+.emailentry{
     background-color: antiquewhite;
     border-radius: 10px;
     color: rgb(0, 0, 0);
@@ -142,7 +136,7 @@ body{
     padding-left:12px;
 }
 
-#passwordentry{
+.passwordentry{
     background-color: antiquewhite;
     border-radius: 10px;
     color: rgb(0, 0, 0);

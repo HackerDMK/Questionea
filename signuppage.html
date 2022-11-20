@@ -22,17 +22,18 @@
         <div id="ContentBox">
             <h1 id="Heading"> Sign Up to Questionea</h1>
             <h3 id="Email">Email</h3>
-            <input type="email" id="emailentry" placeholder="Enter Email">
+            <input type="email" class="emailentry" id="registeremail" placeholder="Enter Email">
             <h3 id="Password">Password</h3>
-            <input type="password" id="passwordentry" placeholder="Enter Password">
+            <input type="password" class="passwordentry" id="registerpassword" placeholder="Enter Password">
             <div id="action">
-                <button id="Button">Create an Account</button>
+                <button class="Button" id="SignupButton">Create an Account</button>
 
                 <p id="OR">OR</p>
 
-                <button id="Google_Login">Sign Up with Google</button>
+                <button id="Google_Login"> <div id="googleicon"><img  src="Google.png"></div> <div id="googletext">Login with Google</div></button>
             
             </div>
         </div>
+        <script type="module" src="auth.js"> </script>
     </body>
 </html>
