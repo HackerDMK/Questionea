@@ -6,7 +6,7 @@
 }
 
 :root{
-  --stdMargin:5rem;
+  --stdMargin:0rem;
 }
 
 body{
@@ -33,11 +33,14 @@ body{
 #ImageSection{
   background: transparent;
   border: none;
+  align-self: center;
+  float: none;
+  position: relative;
 }
 
 #MainImage{
-  width: 55%;
-  height: 50vh;
+  width: 100%;
+  height: 70vh;
   align-self: center;
 }
 
