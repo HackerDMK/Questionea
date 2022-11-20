@@ -35,9 +35,12 @@ body{
 }
 
 #LeftImage{
-    width:160%;
-    height:85vh;
+    width:40rem;
+    height:40rem;
     border: none;
+    align-self: center;
+    position:static;
+    float:left;
 }
 
 #ContentBox{
