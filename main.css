@@ -32,9 +32,15 @@ body{
 
 #ImageSection{
   background: transparent;
-  align-self: center;
-  background-position: bottom;
+  border: none;
 }
+
+#MainImage{
+  width: 55%;
+  height: 50vh;
+  align-self: center;
+}
+
 
 #title{
   align-self: center;
