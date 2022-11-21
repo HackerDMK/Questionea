@@ -10,7 +10,7 @@ body{
   height: 100vh;
   background-image: linear-gradient(to top, #AB96FF 7%, #FFFFFF 32%);
   display:grid;
-  grid-template-columns: repeat(3,5fr);
+  grid-template-columns: repeat(3,6fr);
 }
 
 #TitleBox{
@@ -50,6 +50,9 @@ body{
     grid-column: 3;
     flex-direction: column;
     gap: 1rem;
+    width: 500px;
+    position: relative;
+    float: right;
 }
 
 #Heading{
@@ -134,8 +137,8 @@ body{
     border-radius: 10px;
     color: rgb(0, 0, 0);
     margin-top:10px;
-    height: 40px;
-    width: 500px;
+    height: 6.2%;
+    width: 95%;
     padding-left:12px;
 }
 
@@ -144,8 +147,69 @@ body{
     border-radius: 10px;
     color: rgb(0, 0, 0);
     margin-top:10px;
-    height: 40px;
-    width: 500px;
+    height: 6.2%;
+    width: 95%;
     padding-left:12px;
 }
 
+@media screen and (max-width: 481px){
+
+    body{
+        width: 100;
+      }
+
+    #TitleBox{
+        position: fixed;
+    }
+    #subtitle{
+      font-size: 1rem;
+    }
+
+    #Heading{
+        font-size: 2.5rem;
+        flex-direction: column;
+        align-self: center;
+
+    }
+
+    #ContentBox{
+        margin: 2%;
+        margin-top: 30%;
+        grid-template-columns:repeat(3,6fr);
+        align-content: center;
+        grid-column: 2;
+        text-align: left;
+        width: 40vh;
+        float:left;
+    }
+
+    #action{
+        width: 100%;
+        align-self: center;
+
+    }
+
+    #googleicon{
+        
+        margin-left:20%;
+        align-self: center;
+    }
+    
+
+    #Combine{
+            display: flex;
+            margin: auto;
+
+    }
+   
+
+    #ImageSection{
+        max-height: 100%;
+        max-width: 100%;
+        grid-column:1;
+        grid-row: 3;
+        position:fixed;
+        bottom:-80px;
+    }
+
+  }
