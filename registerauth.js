@@ -38,3 +38,20 @@ const firebaseConfig = {
           alert(error);
         });		  		  
     });
+
+    document.getElementById("Google_Login").addEventListener("click", function() {
+  
+      signInWithPopup(auth, provider)
+     .then((result) => {
+       const credential = GoogleAuthProvider.credentialFromResult(result);
+       const token = credential.accessToken;
+       const user = result.user;
+       console.log(user);
+       window.location.href = "homepage.html"
+     }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       const email = error.customData.email;
+       const credential = GoogleAuthProvider.credentialFromError(error);
+     });
+     });
