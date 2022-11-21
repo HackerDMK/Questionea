@@ -10,6 +10,7 @@
 }
 
 body{
+  overflow: hidden;
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(to top, #75CDFF 7%, #FFFFFF 32%);
