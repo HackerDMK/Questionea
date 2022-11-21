@@ -23,6 +23,6 @@ onAuthStateChanged(auth, (user) => {
       window.location = 'index.html'; //If User is not logged in, redirect to login page
     }
     else{
-        console.log(Loged in Already)
+        console.log("Logged in Already")
     }
   });
