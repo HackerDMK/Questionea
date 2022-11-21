@@ -214,11 +214,13 @@ body{
         width: 50vh;
         position: fixed;
         bottom:-11%;
+        align-self: center;
     }
 
     #LeftImage{
         height: 100%;
         width:100%;
+        align-self: center;
 
     }
 
