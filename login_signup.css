@@ -174,7 +174,7 @@ body{
 
     #ContentBox{
         margin: 2%;
-        margin-top: 30%;
+        margin-top: 40%;
         grid-template-columns:repeat(3,6fr);
         align-content: center;
         grid-column: 2;
@@ -193,8 +193,14 @@ body{
         
         margin-left:20%;
         align-self: center;
+        margin-top: 5px;
     }
-    
+
+    #googletext{
+        font-size: 1rem;
+        align-self: center;
+    }
+
 
     #Combine{
             display: flex;
