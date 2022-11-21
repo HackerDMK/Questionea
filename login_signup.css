@@ -7,7 +7,7 @@
 
 body{
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-image: linear-gradient(to top, #AB96FF 7%, #FFFFFF 32%);
   display:grid;
   grid-template-columns: repeat(3,5fr);
