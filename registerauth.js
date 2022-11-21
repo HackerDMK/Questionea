@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCsfmkK-YCitFYG6RNGuCUCcUGwbebhWio",
@@ -12,11 +13,13 @@ const firebaseConfig = {
     measurementId: "G-PTVYQ922VK"
   };
 
-  const app = initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
 	  const analytics = getAnalytics(app);
 	  const auth = getAuth();
 	  console.log(app);
+    const provider = new GoogleAuthProvider();
 
+    
       document.getElementById("SignupButton").addEventListener("click", function() {
         var email =  document.getElementById("registeremail").value;
         var password = document.getElementById("registerpassword").value;
