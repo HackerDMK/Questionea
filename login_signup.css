@@ -11,6 +11,7 @@ body{
   background-image: linear-gradient(to top, #AB96FF 7%, #FFFFFF 32%);
   display:grid;
   grid-template-columns: repeat(3,6fr);
+  overflow: hidden;
 }
 
 #TitleBox{
@@ -52,8 +53,8 @@ body{
     flex-direction: column;
     gap: 1rem;
     width: 500px;
-    position: sticky;
-    float: right;
+    position:sticky;
+    float: center;
 }
 
 #Heading{
@@ -88,7 +89,7 @@ body{
 .Button{
     align-self:center;
     margin-top:30px;
-    width: 100%;
+    width: 98%;
     height: 30px;
     background:rgba(92, 115, 232, 0.686);
     border-radius: 10px;
@@ -109,7 +110,7 @@ body{
 #Google_Login{
     align-self:center;
     text-align:center;
-    width: 100%;
+    width: 98%;
     height: 42px;
     background:rgba(224, 225, 230, 0.892);
     border-radius: 5px;
@@ -156,7 +157,7 @@ body{
 @media screen and (max-width: 481px){
 
     body{
-        width: 100;
+        width: 100%;
       }
 
     #TitleBox{
@@ -177,11 +178,10 @@ body{
         margin: 2%;
         margin-top: 40%;
         grid-template-columns:repeat(3,6fr);
-        align-content: center;
+        align-items: center;
         grid-column: 2;
         text-align: left;
         width: 40vh;
-        float:left;
     }
 
     #action{
@@ -208,7 +208,6 @@ body{
             margin: auto;
 
     }
-   
 
     #ImageSection{
         height: 50vh;
