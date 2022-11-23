@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="main.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        
-        <title>Questionea</title> 
-
+        <link rel="stylesheet" href="homepage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
     <body>
-        <p id="title">
-            Under Construction
-        </p>
-    <script type="module" src="homepage.js"></script>
+        <div class="page">
+            <div class="navbar">
+                <p class="Title">Questiona</p>
+                <input type="text" class="SearchBox" id="Search" placeholder="Search Here ............................">
+                
+            
+                <button class="QuestionButton">Ask a Question <div id="questionicon"><img  src="askquestion.png"></div>
+                </button>
+                
+                <p class="useremail">youremail@gmail.com
+                </p>
+               
+                <button class="LogoutButton">Logout
+                </button>
+                
+            </div>
+
+            <div class="rightbar">
+                <p class="FeedbackTitle"> Have a Feedback <br> or want to contact us?
+                </p>
+                <div class="FeedbackBox">
+                    <input type="email" class="FeedbackEmail" placeholder="Enter Email">
+                    <input type="text" class="FeedbackText" placeholder="Type the text Here">
+                </div>
+                <button class="SubmitFeeback">Send Now
+                </button>
+            </div>
+
+            <div class="Footer">
+                <p class="SubscribeText">Subscribe to Email Notifications to get our latest updates</p>
+                <input type="email" class="SubscribeEmail" placeholder="Enter Email Here">
+                <button class="SubmitSubscription">Subscribe Here
+                </button>
+            </div>
+        </div>
+    
     </body>
 </html>
