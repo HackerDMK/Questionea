@@ -50,7 +50,6 @@ const firebaseConfig = {
        const token = credential.accessToken;
        const user = result.user;
        console.log(user);
-       alert("Login Sucessfull");
        window.location.href = "homepage.html"
      }).catch((error) => {
        const errorCode = error.code;
