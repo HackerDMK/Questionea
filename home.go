@@ -22,9 +22,8 @@ import (
 	"fmt"
 	"log"
 
-	"google.golang.org/api/iterator"
-
 	"cloud.google.com/go/firestore"
+	"google.golang.org/api/iterator"
 )
 
 func createClient(ctx context.Context) *firestore.Client {
