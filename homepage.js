@@ -94,7 +94,7 @@ document.getElementById("Search").addEventListener('change', async function() {
     LoadData();
   }
   else{
-  const scandocument = query(collection(db, "Questions"), where("Topic", "==", Find));
+  const scandocument = query(collection(db, "Questions"), where("Topic", ">=", Find));
   const SearchSnapshot = await getDocs(scandocument);
   listsearch.innerHTML = '';
   SearchSnapshot.forEach((doc) => {

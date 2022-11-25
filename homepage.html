@@ -34,10 +34,16 @@
 
             <div class="Footer">
                 <p class="SubscribeText">Subscribe to Email Notifications to get our latest updates</p>
-                <input type="email" class="SubscribeEmail" placeholder="Enter Email Here">
-                <button class="SubmitSubscription">Subscribe Here
-                </button>
+                <form action="https://api.sheetmonkey.io/form/YVvEiDmMywk115VSBZ8eR" method="post">
+                    <input type="text" class="SubscribeEmail" name="Email" required />
+                    <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+                    <input class="SubmitSubscription" id="SubmitEmail" type="submit" value="Submit" />
+                    <script> document.getElementById("SubmitEmail").addEventListener('click', async function() {
+                        alert("Thanks for subscribing to Our Maillist")});</script>
+                  </form>
+               
             </div>
+
 
             <div id="MainSection" class="MainSectionDiv">
             </div>
