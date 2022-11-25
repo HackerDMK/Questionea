@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
-import { collection, addDoc, getDocs, getDoc, doc, setDoc} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 
 const firebaseConfig = {
@@ -18,9 +18,9 @@ const firebaseConfig = {
     const app = initializeApp(firebaseConfig);
 	  const analytics = getAnalytics(app);
 	  const auth = getAuth();
-      const db = getFirestore(app);
+    const db = getFirestore(app);
 	  console.log(app);
-      var global = "test@gmail.com";
+    var global = "test@gmail.com";
     
 onAuthStateChanged(auth, (user) => {
     if(!user) {
@@ -60,10 +60,53 @@ document.getElementById("SignOut").addEventListener("click", function() {
             alert("Sign-out successful");
             window.location.href = "index.html"
         }).catch((error) => {
-    // An error happened.
   });
+});
+
+var list = document.getElementById('MainSection');
+
+
+
+const querySnapshot = await getDocs(collection(db, "Questions"));
+querySnapshot.forEach((doc) => {
+  console.log(doc.id, ' => ', doc.data());
+  var topic = doc.get("Topic");
+  var description = doc.get("Description");
+  var counter = doc.get("Counter");
+  var date  = doc.get("Date");
+  list.innerHTML = '';
+  querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      list.innerHTML += `
+                    <div class="Box">
+                    <div id="profile">
+                        <p class="profileemail">${doc.id}</p>
+                    </div>
+                    <div id="QuestionBox">
+                        <p class="QuestionTitle">${doc.get("Topic")}</p>
+                        <p class="QuestionDescription" >${doc.get("Description")}</p>
+                    </div>
+                    <div id="BoxBottom">
+                        <p class="Counter">${doc.get("Counter")}</p>
+                        <img class="vote" src="upvote.png">
+                        <img class="vote" src="downvote.png">
+                        <img class="vote" src="comment.png">
+                        <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
+                        <button class="AnswerButton">Add Answer</button>
+                        <p class="Date">${doc.get("Date")}</p>
+                    </div>
+                </div>
+                `
+              });
 });
 
 
 
-  
+function DataFetchData(topic, description, counter, date, count){
+  var Title= "b"+count+"q1"
+  var Description= "b"+count+"q1"
+  var Counter= "b"+count+"q1"
+  var Date= "b"+count+"q1"
+  console.log(Title)
+  return count+1
+}
