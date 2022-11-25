@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js"
 import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 
@@ -102,11 +102,9 @@ querySnapshot.forEach((doc) => {
 
 
 
-function DataFetchData(topic, description, counter, date, count){
-  var Title= "b"+count+"q1"
-  var Description= "b"+count+"q1"
-  var Counter= "b"+count+"q1"
-  var Date= "b"+count+"q1"
-  console.log(Title)
-  return count+1
-}
+
+document.getElementById("QuestionButton").addEventListener("click", function() {
+  window.location.href = "addquestion.html"
+})
+
+
