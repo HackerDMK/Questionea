@@ -98,7 +98,7 @@ input:hover{
 
 #useremail {
   background-color: #fff;
-  width: 20rem;
+  width: 18rem;
   height: 1.2rem;
   padding: 50px, 10px;
   color: rgb(2, 2, 2);
@@ -273,8 +273,8 @@ input:hover{
   padding: 10px;
   padding-left: 30px;
   border-radius: 20px;
-  width: 78rem;
-  height: 40%;
+  width: 70rem;
+  height: 44%;
   border:1px solid rgb(8, 7, 7);
   margin-bottom: 30px;;
 }
