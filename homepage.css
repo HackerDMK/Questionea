@@ -281,14 +281,16 @@ input:hover{
 
 #profile{
   background-color: rgba(123, 137, 139, 0.412);
-  width:200px;
+  width:auto;
+  max-width: 300px;
   height:auto;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
   border-radius: 30px;
   font-size: 20px;
 }
 
-#profileemail{
+.profileemail{
   align-self: center;
 }
 
@@ -300,15 +302,15 @@ input:hover{
   border-radius: 10px;
 }
 
-#QuestionTitle{
+.QuestionTitle{
   font-size: 25px;
 }
 
-#QuestionDescription{
+.QuestionDescription{
   overflow: scroll;
 }
 
-#QuestionDescription::-webkit-scrollbar{
+.QuestionDescription::-webkit-scrollbar{
   display: none;
 }
 
@@ -320,17 +322,19 @@ input:hover{
 }
 
 #Counter{
+  text-align: center;
+}
+.Counter{
   background-color: darkgray;
-  text-align: left;
-  height: 30px;
+  text-align: center;
+  height: auto;
   width: 30px;
-  max-width: 20px;
-  font-size: 24px;
+  font-size: 18px;
   margin-left: 5px;
-  padding-left: 8px;
   margin-right: 0px;
+  padding: 4.5px;
   align-items: center;
-  text-align:justify;
+  border-radius: 9px;
 }
 
 .vote{
@@ -362,7 +366,7 @@ input:hover{
 }
 
 
-#AnswerButton{
+.AnswerButton{
   background-color: rgba(204, 228, 222, 0.196);
   border-color: #AB96FF;
   width: 100px;
@@ -375,7 +379,7 @@ input:hover{
   margin-left: 20px;;
 }
 
-#Date{
+.Date{
   margin-left: 20px;
 }
 

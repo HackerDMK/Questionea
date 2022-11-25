@@ -87,7 +87,7 @@ querySnapshot.forEach((doc) => {
                         <p class="QuestionDescription" >${doc.get("Description")}</p>
                     </div>
                     <div id="BoxBottom">
-                        <p class="Counter">${doc.get("Counter")}</p>
+                        <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
                         <img class="vote" src="upvote.png">
                         <img class="vote" src="downvote.png">
                         <img class="vote" src="comment.png">
