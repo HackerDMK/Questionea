@@ -1,0 +1,6 @@
+const CountRenderswait = getDocs(collection(db, "Questions")).then(snap => {
+  const size = snap.size
+  return size;
+});
+
+const CountRenders = await CountRenderswait;
