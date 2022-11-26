@@ -35,7 +35,7 @@ input:hover{
   border-width:thick;
   outline:none;
   border-color:#9ecaed;
-  box-shadow:0 0 15px #3984ed;
+  box-shadow:0 0 20px #3984ed;
   margin-bottom: 0px;
 }
 .Title {
@@ -182,6 +182,7 @@ p.Documentid{
   position: absolute;
   width: 80%;
   height:250px;
+  outline:none;
   color: rgb(4, 4, 4);
   background-color: #fff;
   border-radius: 20px;
@@ -189,7 +190,19 @@ p.Documentid{
   padding:10px;
   top: 39%;
   left: 8%;
+  resize:none;
 }
+
+.FeedbackText:hover{
+  border-color:#9ecaed;
+  box-shadow:0 0 10px #ffea08;
+}
+
+.FeedbackText:focus{
+  border-color:#9ecaed;
+  box-shadow:0 0 10px #ffea08;
+}
+
 
 .SubmitFeeback{
   font-size: 15px;
@@ -214,7 +227,7 @@ p.Documentid{
 .Footer{
   width: 100%;
   height: 10%;
-  background-image: linear-gradient(to top, #AB96FF 7%, #ffffff 95%);
+  background-image: linear-gradient(to top, #AB96FF 7%, #ffffff00 95%);
   position: fixed;
   left:0px;
   bottom:0px;
@@ -347,7 +360,7 @@ p.Documentid{
   text-align: center;
 }
 .Counter{
-  background-color: darkgray;
+  background-color: rgba(39, 209, 221, 0.547);
   outline:none;
   border-color:#9ecaed;
   box-shadow:0 0 10px #0d0d0d;

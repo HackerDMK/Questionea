@@ -118,6 +118,8 @@
       color: rgb(0, 0, 0);
       margin-top:10px;
       height: 30%;
-      width: 95%;
+      width: 96%;
+      padding: 20px;
       padding-left:12px;
+      resize: none;
   }
