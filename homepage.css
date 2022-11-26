@@ -5,7 +5,6 @@ body {
 
 .page {
   width: 100%;
-  background: rgba(255,255,255,1);
   opacity: 1;
   top: 0px;
   left: 0px;
@@ -33,15 +32,19 @@ input:hover{
   top: 0px;
   left: 0px;
   overflow: hidden;
+  border-width:thick;
+  outline:none;
+  border-color:#9ecaed;
+  box-shadow:0 0 15px #3984ed;
+  margin-bottom: 0px;
 }
 .Title {
+  position:fixed;
   grid-column: 0;
   margin: 0.7rem;
-  margin-left: 5rem;
-  grid-row: 0;
-  position: sticky;
+  margin-left: 4rem;
   color: rgba(0,0,0,1);
-  font-size: 35px;
+  font-size: 32px;
 }
 
 .SearchBox {
@@ -92,7 +95,7 @@ input:hover{
 }
 
 .QuestionButton:hover{
-  background-color: rgb(148, 148, 171);
+  background-color:rgb(119, 205, 99);
   color: rgb(247, 242, 242);
 }
 
@@ -129,7 +132,7 @@ p.Documentid{
 }
 
 .LogoutButton:hover{
-  background-color: rgb(148, 148, 171);
+  background-color:rgb(119, 205, 99);
   color: rgb(247, 242, 242);
 }
 
@@ -137,7 +140,8 @@ p.Documentid{
   width: 20%;
   height: 80%;
   border-radius: 30px;
-  background: rgb(211, 224, 211);
+  background: #AB96FF;
+  border-color: #212023;
   position: fixed;
   right:15px;
   top:70px;
@@ -203,7 +207,7 @@ p.Documentid{
 }
 
 .SubmitFeeback:hover{
-  background-color: rgb(148, 148, 171);
+  background-color: rgb(119, 205, 99);
   color: rgb(247, 242, 242);
 }
 
@@ -253,7 +257,7 @@ p.Documentid{
 }
 
 .SubmitSubscription:hover{
-  background-color: rgb(148, 148, 171);
+  background-color: rgb(119, 205, 99);
   color: rgb(247, 242, 242);
 }
 
@@ -269,6 +273,7 @@ p.Documentid{
   align-items: center;
   overflow-x: hidden;
   overflow-y:scroll;
+  margin-top: 0px;
 }
 
 .MainSectionDiv::-webkit-scrollbar{
@@ -281,32 +286,42 @@ p.Documentid{
   padding-left: 30px;
   border-radius: 20px;
   width: 70rem;
-  height: 44%;
+  height: 45%;
   border:1px solid rgb(8, 7, 7);
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
+  outline:none;
+  border-color:#0e0f0f;
+  box-shadow:0 0 10px #AB96FF;
 }
 
 #profile{
-  background-color: rgba(123, 137, 139, 0.412);
+  background: #ab96ff92;
   width:auto;
   max-width: 300px;
   height:auto;
   text-align: left;
   padding-left: 20px;
-  border-radius: 30px;
+  border-radius: 6px;
   font-size: 20px;
+  outline:none;
+  border-color:#9ecaed;
+  box-shadow:0 0 10px #0d0d0d;
 }
 
 .profileemail{
   align-self: center;
+  padding: 1px;
 }
 
 #QuestionBox{
-  background-color: darkgray;
+  background-color: #ab96ff92;
   height:59%;
   padding-left: 20px;
   padding-top: 0.1px;
   border-radius: 10px;
+  outline:none;
+  border-color:#9ecaed;
+  box-shadow:0 0 10px #d90808;
 }
 
 .QuestionTitle{
@@ -333,6 +348,9 @@ p.Documentid{
 }
 .Counter{
   background-color: darkgray;
+  outline:none;
+  border-color:#9ecaed;
+  box-shadow:0 0 10px #0d0d0d;
   text-align: center;
   height: auto;
   width: 30px;
@@ -375,15 +393,22 @@ p.Documentid{
 
 .AnswerButton{
   background-color: rgba(204, 228, 222, 0.196);
-  border-color: #AB96FF;
+  border-color: #212023;
+  outline:none;
+  box-shadow:0 0 10px #0d0d0d;
   width: 100px;
   height:30px;
-  color: rgb(2, 2, 2);
   right:2%;
   font-size: 15px;
   text-align: center;
   border-radius: 30px;
   margin-left: 20px;;
+}
+
+.AnswerButton:hover{
+  outline:none;
+  background: #489bdb;
+  box-shadow:0 0 20px #d31616;
 }
 
 .Date{

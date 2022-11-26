@@ -109,8 +109,14 @@ document.getElementById("Search").addEventListener('change', async function() {
   else{
   const scandocument = query(collection(db, "Questions"), where("Topic", ">=", Find));
   const SearchSnapshot = await getDocs(scandocument);
+  const Boxid= [];
   listsearch.innerHTML = '';
+  var i=0;
   SearchSnapshot.forEach((doc) => {
+    const data = doc.data();
+    const fsdsa = doc.get("Date")
+    const Date = convertTimestamp(fsdsa)
+    Boxid[i]=(doc.id).split("+").pop();
     listsearch.innerHTML += `
                   <div class="Box">
                   <div id="profile">
@@ -127,7 +133,7 @@ document.getElementById("Search").addEventListener('change', async function() {
                       <img class="vote" src="comment.png">
                       <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
                       <button class="AnswerButton" class="AnswerText" >Add Answer</button>
-                      <p class="Date">${doc.get("Date")}</p>
+                      <p class="Date">${Date}</p>
                   </div>
               </div>
               `
