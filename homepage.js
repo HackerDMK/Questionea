@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js"
-import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy, updateDoc} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 
 const firebaseConfig = {
@@ -51,6 +51,16 @@ document.getElementById("SignOut").addEventListener("click", function() {
   });
 });
 
+      
+function convertTimestamp(timestamp) {
+    let date = timestamp.toDate();
+    let mm = date.getMonth() + 1;
+    let dd = date.getDate();
+    let yyyy = date.getFullYear();
+  
+    date = mm + '/' + dd + '/' + yyyy;
+    return date;
+  }
 
 async function LoadData(){
 var list = document.getElementById('MainSection');
@@ -60,11 +70,13 @@ const Boxid= [];
 var i=0;
 querySnapshot.forEach((doc) => {
       const data = doc.data();
-      Boxid[i]=doc.id;
-      i=i+1;
+      const fsdsa = doc.get("Date")
+      const Date = convertTimestamp(fsdsa)
+      Boxid[i]=(doc.id).split("+").pop();
       list.innerHTML += `
-                    <div class="Box">
+                    <div class="Box" id="Box${i}">
                     <div id="profile">
+                        <p class="Documentid">${doc.id}</p>
                         <p class="profileemail">${(doc.id).split("+").pop()}</p>
                     </div>
                     <div id="QuestionBox">
@@ -73,19 +85,77 @@ querySnapshot.forEach((doc) => {
                     </div>
                     <div id="BoxBottom">
                         <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
-                        <img class="vote" src="upvote.png">
-                        <img class="vote" src="downvote.png">
+                        <img class="vote1" src="upvote.png">
+                        <img class="vote2" src="downvote.png">
                         <img class="vote" src="comment.png">
                         <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
                         <button class="AnswerButton">Add Answer</button>
-                        <p class="Date">${doc.get("Date")}</p>
+                        <p class="Date">${Date}</p>
                     </div>
                 </div>
                 `
+              i=i+1;
               });
-              console.log(Boxid[2])
+              return i;
 }
-LoadData();
+
+const CountRenders = await LoadData();
+
+async function Upvote(CountRenders){
+  for(let i=0; i<CountRenders ; i++) {
+      const BoxId = "#Box" + i;
+      console.log(BoxId)
+      document.querySelector(BoxId).querySelector(".vote1").addEventListener("click", async function(){
+      const CollectionDocument = document.querySelector(BoxId).querySelector(".Documentid").textContent;
+      const docRef = doc(db, "Questions", CollectionDocument);
+      const docSnap = await getDoc(docRef);
+      console.log("OK")
+      const NewCounter = docSnap.get("Counter") + 1;
+      const CounterUpdate = doc(db, "Questions", CollectionDocument);
+      await updateDoc(CounterUpdate, {
+        Counter: NewCounter
+      });
+      console.log("vote registered");
+      const docRef2 = doc(db, "Questions", CollectionDocument);
+      const docSnap2 = await getDoc(docRef2);
+      const UpdatedCounter = document.querySelector(BoxId).querySelector(".Counter");
+      UpdatedCounter.innerHTML = ``
+      UpdatedCounter.innerHTML = `${docSnap2.get("Counter")}`
+      
+    });
+}
+}
+  
+  function Downvote(CountRenders){
+    for(let i=0; i<CountRenders ; i++) {
+      const BoxId = "#Box" + i;
+      console.log(BoxId)
+      document.querySelector(BoxId).querySelector(".vote2").addEventListener("click", async function(){
+      const CollectionDocument = document.querySelector(BoxId).querySelector(".Documentid").textContent;
+      const docRef = doc(db, "Questions", CollectionDocument);
+      const docSnap = await getDoc(docRef);
+      console.log("OK")
+      const NewCounter = docSnap.get("Counter") - 1;
+      console.log(NewCounter)
+      console.log(CollectionDocument)
+      const CounterUpdate = doc(db, "Questions", CollectionDocument);
+      await updateDoc(CounterUpdate, {
+        Counter: NewCounter
+      });
+      console.log("vote registered");
+      const docRef2 = doc(db, "Questions", CollectionDocument);
+      const docSnap2 = await getDoc(docRef2);
+      const UpdatedCounter = document.querySelector(BoxId).querySelector(".Counter");
+      UpdatedCounter.innerHTML = ``
+      UpdatedCounter.innerHTML = `${docSnap2.get("Counter")}`
+      });
+}
+}
+  
+console.log(CountRenders);
+Upvote(CountRenders);
+Downvote(CountRenders);
+
 
 
 document.getElementById("QuestionButton").addEventListener("click", function() {
@@ -165,3 +235,4 @@ fetch("https://api.apispreadsheets.com/data/AJ9yfGhvrDGUMQc0/", {
   }
 })
 });
+

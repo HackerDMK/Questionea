@@ -110,6 +110,10 @@ input:hover{
   border-radius: 20px;
 }
 
+p.Documentid{
+  display: none;
+}
+
 .LogoutButton{
   background-color: #fff;
   width: 8%;
@@ -340,7 +344,7 @@ input:hover{
   border-radius: 9px;
 }
 
-.vote{
+.vote, .vote2, .vote1{
   width: 30px;
   height: 30px;
   margin-left: 15px;
