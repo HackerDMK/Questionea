@@ -52,3 +52,7 @@ const firebaseConfig = {
     }
   });
 
+  
+  document.getElementById("TitleBox").addEventListener('click', async function() {
+    window.location.href = "homepage.html"
+  });
