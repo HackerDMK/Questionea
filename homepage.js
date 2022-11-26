@@ -125,3 +125,37 @@ document.getElementById("Search").addEventListener('change', async function() {
 document.getElementById("Refresh").addEventListener('click', async function() {
   window.location.href = "homepage.html"
 });
+
+
+document.getElementById("EmailSubmitFeed").addEventListener('click', function() {
+  var FeedbackEmail =  document.getElementById("EmailFeed").value;
+  var FeedbackDescription =  document.getElementById("DescriptionFeed").value;
+fetch("https://api.apispreadsheets.com/data/P6LeqX8CjS9eAZew/", {
+	method: "POST",
+	body: JSON.stringify({"data": {"Email":FeedbackEmail,"Description":FeedbackDescription}}),
+}).then(res =>{
+	if (res.status === 201){
+		alert("Thanks for your Feedback");
+    window.location.href = "homepage.html"
+	}
+	else{
+		// ERROR
+  }
+})
+});
+
+document.getElementById("SubscribeEmailSubmit").addEventListener('click', function() {
+  var SubsEmail =  document.getElementById("SubscribeEmail").value;
+fetch("https://api.apispreadsheets.com/data/AJ9yfGhvrDGUMQc0/", {
+	method: "POST",
+	body: JSON.stringify({"data": {"Email":SubsEmail}}),
+}).then(res =>{
+	if (res.status === 201){
+		alert("Thanks for Subscribing to our Notifications");
+    window.location.href = "homepage.html"
+	}
+	else{
+		// ERROR
+  }
+})
+});

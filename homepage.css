@@ -217,7 +217,8 @@ input:hover{
 .SubscribeText{
   font-size: 25px;
   margin-left: 4%;
-  position: absolute;  
+  position: absolute;
+  bottom:-10px; 
 }
 
 .SubscribeEmail{
@@ -231,6 +232,7 @@ input:hover{
   margin-left: 42%;
   font-size: 15px;
   text-align: left;
+  bottom:15px; 
 }
 
 .SubmitSubscription{
@@ -243,6 +245,7 @@ input:hover{
   font-size: 15px;
   right:15%;
   text-align: center;
+  bottom:15px;
 }
 
 .SubmitSubscription:hover{
