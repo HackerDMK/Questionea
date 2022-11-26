@@ -55,9 +55,13 @@ document.getElementById("SignOut").addEventListener("click", function() {
 async function LoadData(){
 var list = document.getElementById('MainSection');
 const querySnapshot = await getDocs(collection(db, "Questions"));
-  list.innerHTML = '';
-  querySnapshot.forEach((doc) => {
+list.innerHTML = '';
+const Boxid= [];
+var i=0;
+querySnapshot.forEach((doc) => {
       const data = doc.data();
+      Boxid[i]=doc.id;
+      i=i+1;
       list.innerHTML += `
                     <div class="Box">
                     <div id="profile">
@@ -79,8 +83,10 @@ const querySnapshot = await getDocs(collection(db, "Questions"));
                 </div>
                 `
               });
+              console.log(Boxid[2])
 }
 LoadData();
+
 
 document.getElementById("QuestionButton").addEventListener("click", function() {
   window.location.href = "addquestion.html"
