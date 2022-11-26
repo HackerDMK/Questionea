@@ -101,10 +101,29 @@ querySnapshot.forEach((doc) => {
 
 const CountRenders = await LoadData();
 
+async function DocIDUniversal(CountRenders){
+  for(let i=0; i<CountRenders ; i++) {
+    const BoxId = "#Box" + i;
+    document.querySelector(BoxId).querySelector(".vote").addEventListener("click", async function(){
+    const CollectionDocument = document.querySelector(BoxId).querySelector(".Documentid").textContent;
+    const docRef = doc(db, "Questions", CollectionDocument);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("OK")
+      localStorage.setItem('GlobalDocId',CollectionDocument);
+      window.location.href = "answerpage.html"
+    }
+    else{
+      console.log("Error")
+    }
+});
+}}
+
+DocIDUniversal(CountRenders);
+
 async function Upvote(CountRenders){
   for(let i=0; i<CountRenders ; i++) {
       const BoxId = "#Box" + i;
-      console.log(BoxId)
       document.querySelector(BoxId).querySelector(".vote1").addEventListener("click", async function(){
       const CollectionDocument = document.querySelector(BoxId).querySelector(".Documentid").textContent;
       const docRef = doc(db, "Questions", CollectionDocument);
@@ -129,7 +148,6 @@ async function Upvote(CountRenders){
   function Downvote(CountRenders){
     for(let i=0; i<CountRenders ; i++) {
       const BoxId = "#Box" + i;
-      console.log(BoxId)
       document.querySelector(BoxId).querySelector(".vote2").addEventListener("click", async function(){
       const CollectionDocument = document.querySelector(BoxId).querySelector(".Documentid").textContent;
       const docRef = doc(db, "Questions", CollectionDocument);
