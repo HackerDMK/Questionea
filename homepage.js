@@ -61,7 +61,7 @@ const querySnapshot = await getDocs(collection(db, "Questions"));
       list.innerHTML += `
                     <div class="Box">
                     <div id="profile">
-                        <p class="profileemail">${doc.id}</p>
+                        <p class="profileemail">${(doc.id).split("+").pop()}</p>
                     </div>
                     <div id="QuestionBox">
                         <p class="QuestionTitle">${doc.get("Topic")}</p>
@@ -101,7 +101,7 @@ document.getElementById("Search").addEventListener('change', async function() {
     listsearch.innerHTML += `
                   <div class="Box">
                   <div id="profile">
-                      <p class="profileemail">${doc.id}</p>
+                      <p class="profileemail">${(doc.id).split("+").pop()}</p>
                   </div>
                   <div id="QuestionBox">
                       <p class="QuestionTitle">${doc.get("Topic")}</p>

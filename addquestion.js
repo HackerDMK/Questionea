@@ -26,22 +26,25 @@ const firebaseConfig = {
 
   onAuthStateChanged(auth, (user) => {
     if(!user) {
-      window.location = 'index.html'; //If User is not logged in, redirect to login page
+      window.location = 'index.html';
     }
     else{
         console.log("Logged in Already")
         var email = user.email;
-        console.log(email)
+        console.log(email);
+        let x = Math.floor((Math.random() * 1000)+1);
+        const documentid = x + " + " + user.email;
         document.getElementById("AddQuestion").addEventListener("click", async function() {
             var Topic =  document.getElementById("topic").value;
             var Description = document.getElementById("description").value;
             const date = new Date();
-            await setDoc(doc(db, "Questions", email), {
+            await setDoc(doc(db, "Questions", documentid), {
                 Topic: Topic,
                 Description: Description,
                 Date: date,
                 Counter: 0,
               });
+              alert("Question Added");
               window.location = 'homepage.html';
         
         });
