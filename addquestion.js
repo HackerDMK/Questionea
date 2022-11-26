@@ -32,7 +32,7 @@ const firebaseConfig = {
         console.log("Logged in Already")
         var email = user.email;
         console.log(email);
-        let x = Math.floor((Math.random() * 1000)+1);
+        let x = Math.floor((Math.random() * 1000000000000000)+1);
         const documentid = x + " + " + user.email;
         document.getElementById("AddQuestion").addEventListener("click", async function() {
             var Topic =  document.getElementById("topic").value;

@@ -18,25 +18,35 @@ const firebaseConfig = {
     const app = initializeApp(firebaseConfig);
 	  const analytics = getAnalytics(app);
 	  const auth = getAuth();
-    const db = getFirestore(app);
+     const db = getFirestore(app);
 
 
 async function LoadData(){
-    var list = document.getElementById('MainSection');
+    var anslist = document.getElementById('MainSection');
+    var Qslist = document.getElementById('QuestionSection');
     const LocalDocId = localStorage.getItem('GlobalDocId');
-    console.log(LocalDocId)
-    const querySnapshot = await getDocs(collection(db, LocalDocId));
-    console.log(querySnapshot);
-    list.innerHTML = '';
+    const querySnapshot2 = await getDocs(collection(db, "Questions"));
+    Qslist.innerHTML = '';
+    querySnapshot2.forEach((doc) => {
+    if(doc.id == LocalDocId){
+    Qslist.innerHTML += `
+                        <p id=QsTopic>${doc.get("Topic")}</p>
+                        <p id=QsDescription>${doc.get("Description")}</p>
+                        `
+    }
+    })
+    const NewId = '/Answers' + '/' + LocalDocId + '/' + LocalDocId + '/'
+    const querySnapshot = await getDocs(collection(db, NewId));
+    anslist.innerHTML = '';
     const Boxid= [];
     var i=0;
-    const QuestionId = await querySnapshot.forEach((doc) => {
+    await querySnapshot.forEach((doc) => {
           const data = doc.data();
-          list.innerHTML += `
+          anslist.innerHTML += `
                         <div class="Box">
                         <div id="profile">
                             <p class="Documentid">${doc.id}</p>
-                            <p class="profileemail">${doc.get("Answer")}</p>
+                            <p class="profileemail">${doc.id}</p>
                         </div>
                         <div id="AnswerBox">
                             <p class="AnswerDescription" >${doc.get("Answer")}</p>
@@ -45,7 +55,5 @@ async function LoadData(){
                     `
                   i=i+1;
                   });
-                  return doc.id
-    }
-
+}
 LoadData();

@@ -38,18 +38,47 @@
       color:gray;
   }
 
+
   #QuestionSection{
-    position: sticky;
+    top:150px;
+    position:fixed;
     margin-left:30px;
     margin-right: 30px;
     width: 100%;
+  }
+
+  #QsTopic{
+    margin-top:0px;
+      align-self: center;
+      font-weight:400;
+      font-size: 1.5rem;
+      color:gray;
+  }
+
+  #QsDescription{
+    margin-top:0px;
+      align-self: center;
+      font-weight:400;
+      font-size: 1rem;
+      color:rgb(0, 0, 0);
+  }
+
+  #LineBreak{
+    position: fixed;
+    top:245px;
+    width:850PX;
+    text-align:left;
+    margin-left:25px;
+    height: 0.1px;
+    color: black;
+    background-color: blue;
   }
   
   #MainSection{
     overflow-x: hidden;
     overflow-y:scroll;
-    position: sticky;
-    top:10px;
+    position: fixed;
+    top:280px;
     
   }
   
