@@ -19,7 +19,6 @@ const firebaseConfig = {
 	  const analytics = getAnalytics(app);
 	  const auth = getAuth();
     const db = getFirestore(app);
-    var global = "test@gmail.com";
     
 onAuthStateChanged(auth, (user) => {
     if(!user) {
@@ -88,7 +87,7 @@ querySnapshot.forEach((doc) => {
                         <img class="vote1" src="upvote.png">
                         <img class="vote2" src="downvote.png">
                         <img class="vote" src="comment.png">
-                        <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
+                        <input type="text" class="AnswerText" id="AnswerBox" placeholder="Type your Answer Here..................................................">
                         <button class="AnswerButton">Add Answer</button>
                         <p class="Date">${Date}</p>
                     </div>
@@ -101,6 +100,42 @@ querySnapshot.forEach((doc) => {
 
 const CountRenders = await LoadData();
 
+document.getElementById("Search").addEventListener('change', async function() {
+  var listsearch = document.getElementById('MainSection');
+  var Find =  document.getElementById("Search").value;
+  if(Find == 0){
+    LoadData();
+  }
+  else{
+  const scandocument = query(collection(db, "Questions"), where("Topic", ">=", Find));
+  const SearchSnapshot = await getDocs(scandocument);
+  listsearch.innerHTML = '';
+  SearchSnapshot.forEach((doc) => {
+    listsearch.innerHTML += `
+                  <div class="Box">
+                  <div id="profile">
+                      <p class="profileemail">${(doc.id).split("+").pop()}</p>
+                  </div>
+                  <div id="QuestionBox">
+                      <p class="QuestionTitle">${doc.get("Topic")}</p>
+                      <p class="QuestionDescription" >${doc.get("Description")}</p>
+                  </div>
+                  <div id="BoxBottom">
+                      <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
+                      <img class="vote" src="upvote.png">
+                      <img class="vote" src="downvote.png">
+                      <img class="vote" src="comment.png">
+                      <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
+                      <button class="AnswerButton" class="AnswerText" >Add Answer</button>
+                      <p class="Date">${doc.get("Date")}</p>
+                  </div>
+              </div>
+              `
+            });
+}
+})
+
+
 async function DocIDUniversal(CountRenders){
   for(let i=0; i<CountRenders ; i++) {
     const BoxId = "#Box" + i;
@@ -110,16 +145,37 @@ async function DocIDUniversal(CountRenders){
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       console.log("OK")
-      localStorage.setItem('GlobalDocId',CollectionDocument);
+      localStorage.setItem('GlobalDocId', CollectionDocument);
       window.location.href = "answerpage.html"
     }
     else{
       console.log("Error")
     }
-});
+  });
 }}
 
+async function AnswerAdd(CountRenders){
+  for(let i=0; i<CountRenders ; i++) {
+    const BoxId = "#Box" + i;
+    document.querySelector(BoxId).querySelector(".AnswerButton").addEventListener("click", async function(){
+      const CollectionDocumentID = document.querySelector(BoxId).querySelector(".Documentid").textContent;
+      const AnswerDocument = document.querySelector(BoxId).querySelector(".AnswerText").value;
+      console.log(AnswerDocument)
+      const EmailData = document.getElementById("useremail").textContent;
+      const CollectionDocument1 = "Answers" + "/" + CollectionDocumentID + "/" + CollectionDocumentID
+      await setDoc(doc(db, CollectionDocument1, EmailData), {
+        Answer: AnswerDocument
+      });
+      alert("Answer Added");
+      document.querySelector(BoxId).querySelector(".AnswerText").value = '';
+    })
+  }}    
+
+
+
 DocIDUniversal(CountRenders);
+AnswerAdd(CountRenders);
+
 
 async function Upvote(CountRenders){
   for(let i=0; i<CountRenders ; i++) {
@@ -178,42 +234,6 @@ Downvote(CountRenders);
 
 document.getElementById("QuestionButton").addEventListener("click", function() {
   window.location.href = "addquestion.html"
-})
-
-
-document.getElementById("Search").addEventListener('change', async function() {
-  var listsearch = document.getElementById('MainSection');
-  var Find =  document.getElementById("Search").value;
-  if(Find == 0){
-    LoadData();
-  }
-  else{
-  const scandocument = query(collection(db, "Questions"), where("Topic", ">=", Find));
-  const SearchSnapshot = await getDocs(scandocument);
-  listsearch.innerHTML = '';
-  SearchSnapshot.forEach((doc) => {
-    listsearch.innerHTML += `
-                  <div class="Box">
-                  <div id="profile">
-                      <p class="profileemail">${(doc.id).split("+").pop()}</p>
-                  </div>
-                  <div id="QuestionBox">
-                      <p class="QuestionTitle">${doc.get("Topic")}</p>
-                      <p class="QuestionDescription" >${doc.get("Description")}</p>
-                  </div>
-                  <div id="BoxBottom">
-                      <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
-                      <img class="vote" src="upvote.png">
-                      <img class="vote" src="downvote.png">
-                      <img class="vote" src="comment.png">
-                      <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
-                      <button class="AnswerButton">Add Answer</button>
-                      <p class="Date">${doc.get("Date")}</p>
-                  </div>
-              </div>
-              `
-            });
-}
 })
 
 document.getElementById("Refresh").addEventListener('click', async function() {
