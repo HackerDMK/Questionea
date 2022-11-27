@@ -164,6 +164,11 @@ p.Documentid{
   right:15px;
   top:70px;
   align-items: center;
+  outline:none;
+  border-color:#0e0f0f;
+  box-shadow:0 0 10px #AB96FF;
+  border-radius: 20px;
+  border:1px solid rgb(8, 7, 7);
 }
 
 .FeedbackTitle{
