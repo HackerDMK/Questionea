@@ -84,9 +84,9 @@ querySnapshot.forEach((doc) => {
                     </div>
                     <div id="BoxBottom">
                         <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
-                        <img class="vote1" src="upvote.png">
-                        <img class="vote2" src="downvote.png">
-                        <img class="vote" src="comment.png">
+                        <img class="vote1" src="Assets/upvote.png">
+                        <img class="vote2" src="Assets/downvote.png">
+                        <img class="vote" src="Assets/comment.png">
                         <input type="text" class="AnswerText" id="AnswerBox" placeholder="Type your Answer Here..................................................">
                         <button class="AnswerButton">Add Answer</button>
                         <p class="Date">${Date}</p>
@@ -128,9 +128,9 @@ document.getElementById("Search").addEventListener('change', async function() {
                   </div>
                   <div id="BoxBottom">
                       <div id="Counter"> <p class="Counter">${doc.get("Counter")}</p> </div>
-                      <img class="vote" src="upvote.png">
-                      <img class="vote" src="downvote.png">
-                      <img class="vote" src="comment.png">
+                      <img class="vote" src="Assets/upvote.png">
+                      <img class="vote" src="Assets/downvote.png">
+                      <img class="vote" src="Assets/comment.png">
                       <input type="text" id="AnswerBox" placeholder="Type your Answer Here..................................................">
                       <button class="AnswerButton" class="AnswerText" >Add Answer</button>
                       <p class="Date">${Date}</p>
