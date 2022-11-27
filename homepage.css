@@ -324,7 +324,7 @@ p.Documentid{
   padding-left: 30px;
   border-radius: 20px;
   width: 70rem;
-  height: 45%;
+  height: 16rem;
   border:1px solid rgb(8, 7, 7);
   margin-bottom: 30px;
   outline:none;
@@ -454,3 +454,11 @@ p.Documentid{
   margin-left: 20px;
 }
 
+@media screen and (max-width: 1280px){
+.rightbar{
+display: none;
+}
+#MainSection{
+  width:100%;
+}
+}
