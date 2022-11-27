@@ -84,6 +84,7 @@ body{
 
 #login:hover {
   background-color: rgb(153, 153, 255);
+  cursor: pointer;
 }
 
 #signup{
@@ -102,6 +103,7 @@ body{
 
 #signup:hover {
   background-color: rgb(153, 153, 255);
+  cursor: pointer;
 }
   
 @media screen and (max-width: 481px){
