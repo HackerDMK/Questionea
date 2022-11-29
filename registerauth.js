@@ -19,6 +19,9 @@ const firebaseConfig = {
 	  console.log(app);
     const provider = new GoogleAuthProvider();
 
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+
     
       document.getElementById("SignupButton").addEventListener("click", function() {
         var email =  document.getElementById("registeremail").value;

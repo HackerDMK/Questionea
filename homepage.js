@@ -16,9 +16,13 @@ const firebaseConfig = {
 };
 
     const app = initializeApp(firebaseConfig);
-	  const analytics = getAnalytics(app);
-	  const auth = getAuth();
+	const analytics = getAnalytics(app);
+	const auth = getAuth();
     const db = getFirestore(app);
+    var viewport = document.querySelector("meta[name=viewport]");
+
+//Fix viewport on mobile screens
+viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
 
 
 // Check if user is signed in
