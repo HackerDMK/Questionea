@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js"
-import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy, updateDoc} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, getDoc, doc, setDoc, query, where, limit, orderBy, updateDoc, startAt} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 // Firebase config Files
 const firebaseConfig = {
@@ -63,7 +63,8 @@ function convertTimestamp(timestamp) {
 //Function to fetch Questions from database
 async function LoadData(){
     var list = document.getElementById('MainSection');
-    const querySnapshot = await getDocs(collection(db, "Questions"));
+    const scandocument = query(collection(db, "Questions"), orderBy("Counter", "desc"), limit(50));
+    const querySnapshot = await getDocs(scandocument);
     list.innerHTML = '';
     var i=0; //set intial fetch count to zero
     querySnapshot.forEach((doc) => {
