@@ -534,30 +534,42 @@ display: none;
 }
 
 .Footer{
-  display:none;
+  height:5vh;
+  background-image: linear-gradient(to top, #AB96FF 7%, #ffffff00 90%);
 }
 
 .SubscribeText{
- 
+  font-size: 8px;
+  width:40%;
+  bottom: -7%;
 }
 
 .SubscribeEmail{
- 
+  width:30%;
+  height:30%;
+  right:21%;
+  font-size: 8px;
+  padding-left: 10px;
+  bottom:20%;
+  margin-left: 42%;
+  text-align: left;
 }
 
 .SubmitSubscription{
- 
+  font-size: 6px;
+  height: 10px;
+  width: 60px;
+  bottom: 25%;
+  right:2%;
 }
 
-.SubmitSubscription:hover{
-  
-}
+
 
 #MainSection{
   width:100%;
   padding:8px;
   padding-top: 20px;
-  height: 73vh;
+  height: 75.6vh;
   position: fixed;
   left:0px;
   top:11vh;
@@ -601,6 +613,7 @@ display: none;
   font-size: 10px;
   width: 90%;
   overflow: scroll;
+  padding-bottom: 0px;
 }
 
 #BoxBottom{
@@ -643,15 +656,18 @@ display: none;
 .AnswerButton{
   padding: 0px;
   font-size: 8px;
-  width: 100px;
+  width: 55px;
   height:18px;
   text-align: center;
   margin-left: 3px;
+  position: absolute;
+  right:10%;
 }
 
 .Date{
-  font-size: 5px;
-  margin-left: 0px;
+  font-size: 10px;
+  margin-right: 3%;
+  margin-bottom: 100%;
 }
 
 }
