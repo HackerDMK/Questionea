@@ -124,3 +124,76 @@
       padding-left:12px;
       resize: none;
   }
+
+  @media screen and (max-width: 481px){
+
+    body{
+        width: 100%;
+      }
+
+    #TitleBox{
+        position: fixed;
+    }
+    #subtitle{
+      font-size: 1rem;
+    }
+
+    #Heading{
+        font-size: 2.5rem;
+        flex-direction: column;
+        align-self: center;
+
+    }
+
+    #ContentBox{
+        margin: 2%;
+        margin-top: 40%;
+        grid-template-columns:repeat(3,6fr);
+        align-items: center;
+        grid-column: 2;
+        text-align: left;
+        width: 40vh;
+        height:80vh;
+    }
+
+    #LeftImage{
+        display: table;
+        width:100%;
+        height:auto;
+        border: none;
+        position:fixed;
+        align-self: center;
+        bottom:-50px;
+    }
+    #Heading{
+        margin-bottom: 10px;
+        align-self: center;
+        width:max-content;
+        font-size: 2rem;
+        text-transform: capitalize; 
+    }
+    
+    .topicentry{
+        background-color: antiquewhite;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        margin-top:10px;
+        height: 6.2%;
+        width: 95%;
+        padding-left:12px;
+    }
+    
+    .descriptionentry{
+        background-color: antiquewhite;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        margin-top:10px;
+        height: 30%;
+        width: 90%;
+        padding: 20px;
+        padding-left:12px;
+        resize: none;
+    }
+      
+     
+  }

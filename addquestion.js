@@ -24,6 +24,9 @@ const firebaseConfig = {
     var global = "test@gmail.com";
 
 
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+
   onAuthStateChanged(auth, (user) => {
     if(!user) {
       window.location = 'index.html';
